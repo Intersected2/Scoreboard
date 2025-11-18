@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
+        Team orange = new Team("orange");
+        Team yellow = new Team("yellow");
+        Team red = new Team("red");
+        Team
         read();
     }
 
@@ -14,41 +18,31 @@ public class Main {
         String team1 = null;
         String team2 = null;
         String x = null;
+        int current = 0;
+        int active = 1;
         File f = new File("Scoreboard.txt");
         Scanner s = new Scanner(f);
         String input = "";
-        while (s.hasNext()) {
-            while (s.hasNextInt()) {
-                if (team == 1) {
-                    if (s.nextInt() != 0) {
-                        score1 = score1 + s.nextInt();
+        while (s.hasNextLine()) {
+            team1 = s.next();
+            team2 = s.next();
+            while (s.hasNextInt()){
+                current = s.nextInt();
+                if (current != 0){
+                    if (active == 1){
+                        score1 = score1 + current;
                     } else {
-                        score1 = score1;
-                        team = 2;
+                        if (current % 2 == 0){
+                            score2 = score2 + current;
+                        }
+                    }
+                } else {
+                    if (current == 0){
+                        active++;
                     }
                 }
-                if (team == 2) {
-                    if (s.nextInt() != 0) {
-                        score2 = score2 + s.nextInt();
-                    } else {
-                        score2 = score2;
-                        team = 1;
-                    }
-                }
-
             }
-            while (s.hasNext()) {
-                team1 = s.next();
-                team2 = s.next();
-            }
-            x = "" + team;
-//            score1 = 0;
-//            score2 = 0;
-//            team = 1;
-//            team1 = null;
-//            team2 = null;
         }
-        System.out.println(score1);
         return null;
     }
 }
