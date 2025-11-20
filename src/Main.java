@@ -7,7 +7,10 @@ public class Main {
         Team orange = new Team("orange");
         Team yellow = new Team("yellow");
         Team red = new Team("red");
-        Team
+        Team indigo = new Team("indigo");
+        Team violet = new Team("violet");
+        Team green = new Team("green");
+        Team blue = new Team("blue");
         read();
     }
 
@@ -15,24 +18,27 @@ public class Main {
         int score1 = 0;
         int score2 = 0;
         int team = 1;
-        String team1 = null;
-        String team2 = null;
+        String team1 = "";
+        String team2 = "";
         String x = null;
         int current = 0;
         int active = 1;
         File f = new File("Scoreboard.txt");
         Scanner s = new Scanner(f);
         String input = "";
-        while (s.hasNextLine()) {
-            team1 = s.next();
-            team2 = s.next();
+        while (s.hasNext()) {
+                System.out.print(s.next());
+                System.out.println(" " + s.next());
+                //team1 = s.next();
+                //team2 = s.next();
             while (s.hasNextInt()){
                 current = s.nextInt();
-                if (current != 0){
-                    if (active == 1){
+                System.out.println(active);
+                if (current > 0){
+                    if (active % 2 == 1){
                         score1 = score1 + current;
                     } else {
-                        if (current % 2 == 0){
+                        if (active % 2 == 0){
                             score2 = score2 + current;
                         }
                     }
@@ -41,8 +47,37 @@ public class Main {
                         active++;
                     }
                 }
+                if (team1 == "orange"){
+
+                } else {
+                    if (team1 == "yellow"){
+
+                    } else {
+                        if (team1 == "red"){
+
+                        } else {
+                            if (team1 == "indigo"){
+
+                            } else {
+                                if (team1 == "violet"){
+
+                                } else {
+                                    if (team1 == "green"){
+
+                                    } else {
+                                        if (team1 == "blue"){
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
+        System.out.println(score1);
+        System.out.println(score2);
         return null;
     }
 }
