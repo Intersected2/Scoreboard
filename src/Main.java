@@ -33,7 +33,7 @@ public class Main {
                 team2 = s.next();
             while (s.hasNextInt()){
                 current = s.nextInt();
-                System.out.println(active);
+//                System.out.println(active);
                 if (current > 0){
                     if (active % 2 == 1){
                         score1 = score1 + current;
@@ -77,25 +77,25 @@ public class Main {
                     }
                 } else {
                     if (score1 < score2){
-                        if (team1 == "orange"){
+                        if (team2 == "orange"){
                             orange.addwins();
                         } else {
-                            if (team1 == "yellow"){
+                            if (team2 == "yellow"){
                                 yellow.addwins();
                             } else {
-                                if (team1 == "red"){
+                                if (team2 == "red"){
                                     red.addwins();
                                 } else {
-                                    if (team1 == "indigo"){
+                                    if (team2 == "indigo"){
                                         indigo.addwins();
                                     } else {
-                                        if (team1 == "violet"){
+                                        if (team2 == "violet"){
                                             violet.addwins();
                                         } else {
-                                            if (team1 == "green"){
+                                            if (team2 == "green"){
                                                 green.addwins();
                                             } else {
-                                                if (team1 == "blue"){
+                                                if (team2 == "blue"){
                                                     blue.addwins();
                                                 }
                                             }
@@ -112,8 +112,8 @@ public class Main {
                 score2 = 0;
             }
         }
-        System.out.println(score1);
-        System.out.println(score2);
+//        System.out.println(score1);
+//        System.out.println(score2);
         return null;
     }
 }
