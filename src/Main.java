@@ -1,7 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-
+//Pls don't ask about the if statements. Ty.
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         read();
